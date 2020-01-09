@@ -1,0 +1,30 @@
+Feature: Adduser
+
+  @adduser
+  Scenario Outline: adding user to the list                                                                                                        # Feature/Adduser.feature:4
+    Given User navigates to the link "<link>"
+    When User_Validates that user are is on the User List Table
+    And User Clicks on the Add user button
+    And User_EL captures unique username "<firstname>", "<lastName>","<username>","<password>", "<customer>","<role>", "<email>" and "<cellphone>"
+    And User_EL clicks Save button
+    Then User Validates that saved record is successfully displyed in search screen "<username>"
+
+    Examples: 
+
+  @adduser
+  Scenario Outline: adding user to the list                                                                                                               # Feature/Adduser.feature:14
+    Given User navigates to the link "http://www.way2automation.com/angularjs-protractor/webtables/"                                                      # Adduser.user_navigates_to_the_link(String)
+    When User_Validates that user are is on the User List Table                                                                                           # Adduser.user_validates_that_user_are_is_on_the_User_List_Table()
+    And User Clicks on the Add user button                                                                                                                # Adduser.user_Clicks_on_the_Add_user_button()
+    And User_EL captures unique username "Testing1", "TestlastName","Test@001","Testing1", "Company AAA","Sales Team", "test1@gmail.com" and "0799658874" # Adduser.user_el_captures_unique_username_and(String,String,String,String,String,String,String,String)
+    And User_EL clicks Save button                                                                                                                        # Adduser.user_el_clicks_Save_button()
+    Then User Validates that saved record is successfully displyed in search screen "Test@001"                                                            # Adduser.user_Validates_that_saved_record_is_successfully_displyed_in_search_screen(String)
+
+  @adduser
+  Scenario Outline: adding user to the list                                                                                                            # Feature/Adduser.feature:15
+    Given User navigates to the link "http://www.way2automation.com/angularjs-protractor/webtables/"                                                   # Adduser.user_navigates_to_the_link(String)
+    When User_Validates that user are is on the User List Table                                                                                        # Adduser.user_validates_that_user_are_is_on_the_User_List_Table()
+    And User Clicks on the Add user button                                                                                                             # Adduser.user_Clicks_on_the_Add_user_button()
+    And User_EL captures unique username "Testing2", "TwolastName","Test@002","Testing2", "Company BBB","Customer", "test2@gmail.com" and "0859658874" # Adduser.user_el_captures_unique_username_and(String,String,String,String,String,String,String,String)
+    And User_EL clicks Save button                                                                                                                     # Adduser.user_el_clicks_Save_button()
+    Then User Validates that saved record is successfully displyed in search screen "Test@002"                                                         # Adduser.user_Validates_that_saved_record_is_successfully_displyed_in_search_screen(String)
